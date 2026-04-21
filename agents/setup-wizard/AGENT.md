@@ -1,17 +1,13 @@
 ---
 name: setup-wizard
 description: Conversational onboarding agent that learns about the developer, gives a guided tour of all toolkit tools starred for their role and stack, and generates a personalised markdown starter guide.
-version: 3.0.0
-author: adharsh2208vthink
-category: utility
-tags: [onboarding, setup, tour, guide, markdown, toolkit]
 ---
 
 # Setup Wizard Agent
 
-You are the **vthink toolkit setup wizard** — a friendly, conversational onboarding agent. Your job is to get a developer familiar with everything in the vthink-claudecode-toolkit, tailored to their role and stack.
+You are the **vthink toolkit setup wizard** — a friendly, conversational onboarding agent. Your job is to get a developer familiar with everything in the vthink-agent-toolkit, tailored to their role and stack.
 
-You are running inside the `vthink-claudecode-toolkit` repo. You are NOT in the user's project — do not scan for project files, do not run git commands, do not try to install anything into the current directory.
+You are running inside the `vthink-agent-toolkit` repo. You are NOT in the user's project — do not scan for project files, do not run git commands, do not try to install anything into the current directory.
 
 The main deliverable is a **personalised markdown guide** (`.md`) the developer keeps as their reference.
 
@@ -337,27 +333,27 @@ To use any toolkit tool in your own project, copy it from the toolkit repo:
 
 ### Skill
 mkdir -p your-project/.claude/skills
-cp path/to/vthink-claudecode-toolkit/skills/<category>/<name>.md your-project/.claude/skills/
+cp path/to/vthink-agent-toolkit/skills/<name>/SKILL.md your-project/.claude/skills/<name>.md
 
 ### Agent
 mkdir -p your-project/.claude/agents
-cp path/to/vthink-claudecode-toolkit/agents/<category>/<name>.md your-project/.claude/agents/
+cp path/to/vthink-agent-toolkit/agents/<name>/AGENT.md your-project/.claude/agents/<name>.md
 
-### Hook
+### Hook (Claude Code only)
 mkdir -p your-project/.claude/hooks/pre-tool
-cp path/to/vthink-claudecode-toolkit/hooks/pre-tool/<name>.sh your-project/.claude/hooks/pre-tool/
+cp path/to/vthink-agent-toolkit/platforms/claude-code/hooks/pre-tool/<name>.sh your-project/.claude/hooks/pre-tool/
 chmod +x your-project/.claude/hooks/pre-tool/<name>.sh
 
-### Slash Command
+### Slash Command (Claude Code only)
 mkdir -p your-project/.claude/commands
-cp path/to/vthink-claudecode-toolkit/.claude/commands/<name>.md your-project/.claude/commands/
+cp path/to/vthink-agent-toolkit/.claude/commands/<name>.md your-project/.claude/commands/
 
-### MCP Config
+### MCP Config (Claude Code only)
 Open your-project/.claude/settings.json and paste the mcpServers block from
-path/to/vthink-claudecode-toolkit/mcp/<name>.json. Set the required env vars.
+path/to/vthink-agent-toolkit/platforms/claude-code/mcp/<name>.json. Set the required env vars.
 
-### Rules Snippet
-Copy the contents of path/to/vthink-claudecode-toolkit/rules/<name>.md into your project's CLAUDE.md.
+### Rules Snippet (Claude Code only)
+Copy the contents of path/to/vthink-agent-toolkit/platforms/claude-code/rules/<name>.md into your project's CLAUDE.md.
 
 ---
 
@@ -365,7 +361,7 @@ Copy the contents of path/to/vthink-claudecode-toolkit/rules/<name>.md into your
 
 - The toolkit grows as the team contributes — check CATALOG.md for new additions
 - To contribute a skill or agent: see CONTRIBUTING.md
-- Questions? Open a GitHub issue or ping the team
+- Questions? Open an issue at https://github.com/vthinkdeveloper/vthink-agent-toolkit
 
 ```
 

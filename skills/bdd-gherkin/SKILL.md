@@ -1,17 +1,6 @@
 ---
 name: bdd-gherkin
-description: >
-  Generate BDD Gherkin feature files from requirements — even vague ones. This skill collaborates
-  with the user by asking targeted clarifying questions to uncover hidden assumptions, edge cases,
-  and acceptance criteria, then produces well-structured Given/When/Then scenarios. No source code
-  needed. Use this skill whenever the user asks to write BDD requirements, Gherkin scenarios,
-  .feature files, acceptance criteria in Given/When/Then format, or behavior-driven test
-  specifications. Also trigger when the user mentions "BDD", "Gherkin", "Cucumber", "feature file",
-  "acceptance tests", or "Given/When/Then" in the context of writing requirements or test scenarios.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [bdd, gherkin, cucumber, testing, requirements, acceptance-criteria]
+description: Generate BDD Gherkin feature files from requirements — even vague ones. Asks clarifying questions to surface edge cases and acceptance criteria, then produces Given/When/Then scenarios. Use when asked for BDD requirements, Gherkin scenarios, .feature files, or acceptance criteria.
 ---
 
 # BDD Gherkin Scenario Generator

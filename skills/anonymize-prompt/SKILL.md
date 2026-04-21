@@ -1,18 +1,6 @@
 ---
 name: anonymize-prompt
-description: >
-  Generate an anonymized, privacy-safe prompt describing the current technical problem
-  you're working on. The output can be safely pasted into external search engines and
-  chatbots (Google AI, Perplexity, ChatGPT, etc.) without leaking any proprietary
-  codebase details. Strips all company names, project names, class names, variable names,
-  package paths, URLs, and internal terminology — replacing them with generic equivalents
-  while preserving the exact technical problem. Invoke with /anonymize-prompt or
-  /anon-prompt. Optionally pass a description of the problem as an argument.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [privacy, prompting, search, anonymization]
-argument-hint: "[optional: description of the problem in your own words]"
+description: Generate a privacy-safe version of the current technical problem, safe to paste into external tools. Strips company names, project names, class names, URLs, and internal terminology while preserving the technical substance. Use when you need to search externally without leaking proprietary details.
 allowed-tools: Read, Grep, Glob
 ---
 

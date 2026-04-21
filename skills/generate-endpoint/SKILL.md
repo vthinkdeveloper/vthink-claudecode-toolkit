@@ -1,16 +1,6 @@
 ---
 name: generate-endpoint
-description: >
-  Generate a complete CRUD endpoint for a new resource. Auto-detects the
-  project structure (routes file, db/models layer, test framework) and adapts
-  generation accordingly. Works with Express, Fastify, Flask, and similar
-  frameworks. Invoke with /generate-endpoint <resource-name>.
-version: 1.0.0
-author: adharsh2208vthink
-category: backend
-tags: [crud, api, rest, endpoint, code-generation]
-argument-hint: "<resource-name>"
-allowed-tools: Read, Grep, Glob, Write, Edit, AskUserQuestion
+description: Generate a complete CRUD endpoint for a new resource. Auto-detects project structure (routes, models, test framework) and adapts to Express, Fastify, Flask, and similar frameworks. Use when asked to generate or scaffold a new API endpoint.
 ---
 
 # Generate Endpoint

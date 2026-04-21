@@ -1,119 +1,127 @@
-# vthink-claudecode-toolkit
+# vthink-agent-toolkit
 
-> A shared toolkit of Claude Code skills, agents, slash commands, and hooks for the vthink engineering team.
+> Production-grade skills, agents, and workflows for AI coding agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-blue)](https://github.com/anthropics/claude-code)
+
+Skills encode the workflows, quality gates, and engineering practices that senior engineers use — packaged so any AI agent follows them consistently. Works with Claude Code, Cursor, Windsurf, Gemini CLI, and more.
 
 ---
 
-## Start Here
+## Skills
 
-The fastest way to get set up is to **open this repo in Claude Code** — it'll
-offer to run the setup wizard automatically.
+| Skill | What it does |
+|-------|-------------|
+| [`commit-push`](skills/commit-push/SKILL.md) | Stage → generate Conventional Commit message → confirm → push |
+| [`commit-push-pr`](skills/commit-push-pr/SKILL.md) | Stage → commit → push → open a PR with confirmed title and description |
+| [`ship`](skills/ship/SKILL.md) | Conventions check + commit with ticket ID from branch + push |
+| [`give-me-a-commit-message`](skills/give-me-a-commit-message/SKILL.md) | Suggest a commit message from staged diff without committing |
+| [`conventions-check`](skills/conventions-check/SKILL.md) | Check code against conventions discovered from the codebase itself |
+| [`qa-guide`](skills/qa-guide/SKILL.md) | Generate a structured QA test plan from a PR diff |
+| [`bdd-gherkin`](skills/bdd-gherkin/SKILL.md) | Turn vague requirements into Given/When/Then Gherkin scenarios |
+| [`anonymize-prompt`](skills/anonymize-prompt/SKILL.md) | Rewrite a technical question to strip all proprietary details |
+| [`generate-endpoint`](skills/generate-endpoint/SKILL.md) | Scaffold a complete CRUD endpoint adapted to your project structure |
 
-Or trigger it yourself at any time:
+## Agents
+
+| Agent | What it does |
+|-------|-------------|
+| [`test-runner`](agents/test-runner/AGENT.md) | Run the test suite, diagnose failures, fix source code, repeat until green |
+| [`setup-wizard`](agents/setup-wizard/AGENT.md) | Onboarding agent — tours the toolkit and generates a personalised starter guide |
+
+---
+
+## Install
+
+<details>
+<summary><b>Claude Code</b></summary>
+
+**Marketplace:**
+```
+/plugin marketplace add vthinkdeveloper/vthink-agent-toolkit
+```
+
+**Manual — copy a skill into your project:**
+```bash
+mkdir -p your-project/.claude/skills
+cp path/to/vthink-agent-toolkit/skills/commit-push/SKILL.md \
+   your-project/.claude/skills/commit-push.md
+```
+
+**Onboarding wizard:**
+```bash
+mkdir -p ~/.claude/agents
+cp agents/setup-wizard/AGENT.md ~/.claude/agents/setup-wizard.md
+```
+Then say: *"Set up the vthink toolkit for this project"*
+
+</details>
+
+<details>
+<summary><b>Cursor</b></summary>
+
+Copy any `SKILL.md` into `.cursor/rules/` or reference the `skills/` directory in your Cursor rules config.
 
 ```bash
-mkdir -p ~/.claude/agents && cp agents/utility/setup-wizard.md ~/.claude/agents/
+cp path/to/vthink-agent-toolkit/skills/conventions-check/SKILL.md \
+   your-project/.cursor/rules/conventions-check.md
 ```
 
-Then open any project in Claude Code and say:
-> *"Set up the vthink toolkit for this project"*
+</details>
 
-The wizard learns about your role, scans your project, and builds you a
-personalised reference guide.
+<details>
+<summary><b>Windsurf</b></summary>
 
----
+Add skill contents to your `.windsurfrules` file, or copy `SKILL.md` files into your project's rules directory.
 
-## What's in the Toolkit
+</details>
 
-Browse the full catalog: **[CATALOG.md](CATALOG.md)**
+<details>
+<summary><b>Gemini CLI</b></summary>
 
-| Category | Count | Location |
-|----------|-------|----------|
-| Agents | — | [`agents/`](agents/) |
-| Skills | — | [`skills/`](skills/) |
-| Slash Commands | — | [`.claude/commands/`](.claude/commands/) |
-| Hooks | — | [`hooks/`](hooks/) |
-| Rules | — | [`rules/`](rules/) |
-| MCP Configs | — | [`mcp/`](mcp/) |
-| Settings Templates | — | [`settings-templates/`](settings-templates/) |
-| Workflows | — | [`workflows/`](workflows/) |
-
----
-
-## Quick Install
-
-### Copy a single skill into your project
+Reference skill files in `GEMINI.md` for persistent context, or install directly:
 
 ```bash
-cp path/to/vthink-claudecode-toolkit/skills/backend/my-skill.md \
-   your-project/.claude/skills/
+gemini skills install https://github.com/vthinkdeveloper/vthink-agent-toolkit.git --path skills
 ```
 
-### Copy all slash commands into your project
-
-```bash
-cp vthink-claudecode-toolkit/.claude/commands/*.md \
-   your-project/.claude/commands/
-```
-
-### Use a hook
-
-```bash
-cp vthink-claudecode-toolkit/hooks/pre-tool/my-hook.sh \
-   your-project/.claude/hooks/pre-tool/
-chmod +x your-project/.claude/hooks/pre-tool/my-hook.sh
-```
-
-> See [`CATALOG.md`](CATALOG.md) to browse all available tools.
+</details>
 
 ---
 
-## Directory Guide
+## Directory Structure
 
 ```
-vthink-claudecode-toolkit/
-├── .claude/commands/       # Slash commands — invoke with /command-name in Claude Code
-├── agents/                 # Sub-agent definitions, organized by category
-│   ├── core-development/
-│   ├── code-review/
-│   ├── testing/
-│   └── devops/
-├── skills/                 # Skill files — domain/workflow knowledge for Claude
-│   ├── frontend/
-│   ├── backend/
-│   └── data/
-├── hooks/                  # Shell scripts triggered by Claude Code events
-│   ├── pre-tool/           # Run before a tool executes
-│   └── post-tool/          # Run after a tool executes
-├── rules/                  # CLAUDE.md snippets — always-follow instructions
-├── mcp/                    # MCP server config snippets (copy into settings.json)
-├── settings-templates/     # Pre-built .claude/settings.json by project type
-├── workflows/              # Multi-agent orchestration patterns
-├── templates/              # Starter templates for new contributions
-├── examples/               # Real-world usage examples
-└── docs/                   # Documentation
+vthink-agent-toolkit/
+├── skills/                     # Skills — one folder per skill, always SKILL.md
+│   ├── commit-push/SKILL.md
+│   ├── ship/SKILL.md
+│   └── ...
+├── agents/                     # Agents — one folder per agent, always AGENT.md
+│   ├── test-runner/AGENT.md
+│   └── setup-wizard/AGENT.md
+├── workflows/                  # Multi-agent orchestration patterns
+├── platforms/
+│   └── claude-code/            # Claude Code-specific assets
+│       ├── hooks/              # Pre/post-tool shell scripts
+│       ├── mcp/                # MCP server config snippets
+│       ├── settings-templates/ # .claude/settings.json starters by project type
+│       └── rules/              # CLAUDE.md snippets
+├── .claude/commands/           # Slash commands (Claude Code)
+└── templates/                  # Starter templates for contributors
 ```
-
----
-
-## Featured Contributions
-
-_Add standout skills, agents, or commands here as the toolkit grows._
 
 ---
 
 ## How to Contribute
 
-We welcome contributions from any vthink engineer! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
+See [CONTRIBUTING.md](CONTRIBUTING.md). The short version:
 
-- Standards for file naming and frontmatter
-- Which folder your contribution belongs in
-- How to use the starter templates
-- The PR review process
+1. Create `skills/<your-skill-name>/SKILL.md` or `agents/<your-agent-name>/AGENT.md`
+2. Use only `name` and `description` frontmatter
+3. Update `CATALOG.md`
+4. Open a PR
 
 ---
 

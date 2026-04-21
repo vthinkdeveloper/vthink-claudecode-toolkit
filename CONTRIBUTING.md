@@ -1,110 +1,111 @@
-# Contributing to vthink-claudecode-toolkit
+# Contributing to vthink-agent-toolkit
 
-Thanks for contributing! This toolkit grows through shared expertise — the more engineers contribute, the more powerful it becomes for everyone.
+Thanks for contributing! Skills and agents here should be useful across any AI coding agent runtime — not tied to Claude Code specifically.
 
 ---
 
 ## Ways to Contribute
 
-- **New Skill** — domain knowledge or workflow automation for Claude to follow
-- **New Agent** — a specialized sub-agent with a defined role and responsibilities
-- **New Command** — a slash command (`.md` file in `.claude/commands/`)
-- **New Hook** — a shell script triggered by Claude Code events
-- **New MCP Config** — a ready-to-paste MCP server snippet for `.claude/settings.json`
-- **New Settings Template** — a `.claude/settings.json` starter for a project type
-- **New Workflow** — a multi-agent orchestration pattern
+- **New Skill** — a workflow or domain knowledge prompt (`skills/<name>/SKILL.md`)
+- **New Agent** — a specialised sub-agent with a defined role (`agents/<name>/AGENT.md`)
+- **New Workflow** — a multi-agent orchestration pattern (`workflows/`)
+- **Claude Code-specific** — hooks, MCP configs, settings templates, rules (`platforms/claude-code/`)
 - **Bug Fix / Improvement** — fix a broken prompt, improve clarity, update stale instructions
-- **Documentation** — improve README, getting-started, or inline comments
+- **Documentation** — improve README, getting-started, or inline docs
 
 ---
 
-## Contribution Standards
+## File Structure
 
-### File Naming
-Use **kebab-case** for all files: `generate-endpoint.md`, `pre-commit-check.sh`
+Skills and agents each get their own folder:
 
-### Required Frontmatter
-All `.md` contribution files (skills, agents, commands, workflows) must include this frontmatter block at the top:
+```
+skills/<skill-name>/SKILL.md
+agents/<agent-name>/AGENT.md
+```
+
+Use **kebab-case** for folder and file names.
+
+---
+
+## Frontmatter
+
+All skill and agent `.md` files require only two frontmatter fields:
 
 ```yaml
 ---
 name: kebab-case-name
-description: One-line description of what this does
-version: 1.0.0
-author: your-github-username
-category: <see valid values per type>
-tags: [tag1, tag2]
+description: What this does. Use when <trigger conditions>.
 ---
 ```
 
-**Valid categories:**
-- Agents: `core-development`, `code-review`, `testing`, `devops`
-- Skills: `frontend`, `backend`, `data`, `workflow`
-- Commands: `git`, `quality`, `generation`, `devops`, `utility`
-- Hooks: `pre-tool`, `post-tool`
-- Workflows: use descriptive tags instead of a fixed category list
+Do **not** include `version`, `author`, `category`, `tags`, or `allowed-tools` — these are runtime-specific and don't belong in the portable skill/agent definition.
 
-### No Sensitive or Proprietary Information
-- No internal URLs, credentials, API keys, or company-specific project names
-- Generalize references to file paths, service names, and internal tooling
-- When in doubt, use config-file-driven approaches (e.g., read settings from a local `.json` file)
-- MCP configs must use environment variable references (`$ENV_VAR`) — never hardcoded secrets
+---
+
+## Skill Quality Bar
+
+Skills should be:
+
+- **Specific** — actionable steps, not vague advice
+- **Verifiable** — clear exit criteria
+- **Generic** — no project-specific names, internal URLs, or hardcoded credentials
+- **Minimal** — only the content needed to guide the agent correctly
 
 ---
 
 ## Folder Placement
 
 | Contribution Type | Folder |
-|-------------------|--------|
-| Agent | `agents/<category>/` |
-| Skill | `skills/<category>/` |
-| Slash Command | `.claude/commands/` |
-| Pre-tool Hook | `hooks/pre-tool/` |
-| Post-tool Hook | `hooks/post-tool/` |
-| CLAUDE.md snippet | `rules/` |
-| MCP Config | `mcp/` |
-| Settings Template | `settings-templates/` |
+|---|---|
+| Skill | `skills/<name>/SKILL.md` |
+| Agent | `agents/<name>/AGENT.md` |
 | Workflow | `workflows/` |
+| Slash Command (Claude Code) | `.claude/commands/` |
+| Hook (Claude Code) | `platforms/claude-code/hooks/pre-tool/` or `post-tool/` |
+| MCP Config (Claude Code) | `platforms/claude-code/mcp/` |
+| Settings Template (Claude Code) | `platforms/claude-code/settings-templates/` |
+| CLAUDE.md Snippet (Claude Code) | `platforms/claude-code/rules/` |
+| Output Style | `output-styles/` |
 
 ---
 
 ## Template Usage
 
-Before writing from scratch, copy the appropriate template:
-
 ```bash
-# For a new agent
-cp templates/agent-template.md agents/<category>/my-agent.md
+# New skill
+cp templates/skill-template.md skills/<my-skill-name>/SKILL.md
 
-# For a new skill
-cp templates/skill-template.md skills/<category>/my-skill.md
-
-# For a new slash command
-cp templates/command-template.md .claude/commands/my-command.md
+# New agent
+cp templates/agent-template.md agents/<my-agent-name>/AGENT.md
 ```
 
-Fill in all frontmatter fields and replace placeholder sections with real content.
+---
+
+## Sensitive Information
+
+- No internal URLs, credentials, API keys, or company-specific project names
+- MCP configs must use `$ENV_VAR` references — never hardcoded secrets
+- Skills should read project-specific config from local files (e.g., `package.json`) rather than hardcoding assumptions
 
 ---
 
 ## PR Process
 
 1. Fork this repository
-2. Create a branch: `git checkout -b add/my-skill-name`
-3. Add your contribution in the correct folder using the template
-4. Fill out the PR template when opening the pull request
-5. **Adharsh** (@adharsh2208vthink) or **Baskar** will review your PR
+2. Create a branch: `git checkout -b add/<skill-name>`
+3. Add your contribution using the template
+4. Update `CATALOG.md` — this is mandatory, reviewers check it
+5. Open a PR using the PR template
 
 ---
 
 ## Review Criteria
 
-Reviewers will check:
-
-- **Clarity** — does the prompt/instruction clearly describe behavior?
+- **Clarity** — does the instruction clearly describe the behavior?
 - **Uniqueness** — does this add something not already in the toolkit?
-- **Tested** — has the author verified it works in Claude Code?
-- **Generic** — no project-specific assumptions baked in (or uses config files to abstract them)
-- **Frontmatter** — all required fields present and accurate
-- **Correct placement** — file is in the right category folder
-- **Catalog updated** — a row has been added to the relevant table in `CATALOG.md`
+- **Tested** — has the author verified it works?
+- **Generic** — no project-specific assumptions baked in
+- **Frontmatter** — only `name` and `description`, both filled in
+- **Correct placement** — file is in the right folder
+- **Catalog updated** — a row has been added to `CATALOG.md`
