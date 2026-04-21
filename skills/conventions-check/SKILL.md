@@ -1,20 +1,6 @@
 ---
 name: conventions-check
-description: >
-  Check code changes against project conventions. Supports two modes:
-  a PR number (e.g., `/conventions-check 863`) to analyze a PR diff, or
-  file paths/globs (e.g., `/conventions-check src/**/*.java`) to check
-  specific files. Discovers conventions from the project's own codebase
-  (CLAUDE.md, linter configs, existing patterns) and reports violations in
-  naming, patterns, architecture, and file organization. Use this skill
-  whenever someone asks to "check conventions", "review code style",
-  "audit patterns", or "validate naming".
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [code-quality, conventions, linting, review]
-argument-hint: <PR-number or file-path>
-allowed-tools: Bash(gh *), Read, Grep, Glob
+description: Check code changes against project conventions. Accepts a PR number or file paths/globs. Discovers conventions from the codebase itself and reports violations in naming, patterns, and file organization. Use when asked to "check conventions", "review code style", "audit patterns", or "validate naming".
 ---
 
 # Code Conventions Checker

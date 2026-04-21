@@ -1,12 +1,6 @@
 ---
 name: qa-guide
-description: Generate a comprehensive QA testing guide for a GitHub Pull Request. Analyzes the PR diff, researches the codebase for impact, and produces a structured test plan written for QA testers.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [qa, testing, pull-request, test-plan]
-argument-hint: <PR-number>
-allowed-tools: Bash(gh *), Read, Grep, Glob, Write
+description: Generate a comprehensive QA testing guide for a pull request. Analyzes the PR diff, researches codebase impact, and produces a structured test plan for QA testers. Use when asked to create a QA guide or test plan for a PR.
 ---
 
 # QA Testing Guide Generator

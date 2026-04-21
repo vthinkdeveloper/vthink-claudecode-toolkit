@@ -1,16 +1,6 @@
 ---
 name: give-me-a-commit-message
-description: >
-  Suggest a commit message based on the current staged and unstaged changes.
-  Does NOT commit or push — just outputs the message for you to copy.
-  Extracts ticket ID from the current branch name if present.
-  Invoke with /give-me-a-commit-message.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [git, commit-message, conventional-commits]
-argument-hint: "[optional: extra context about the change]"
-allowed-tools: Bash(git *)
+description: Suggest a Conventional Commits message based on current staged and unstaged changes. Does not commit — just outputs the message to copy. Extracts ticket ID from branch name if present. Use when you want a commit message suggestion without committing.
 ---
 
 # Suggest Commit Message
