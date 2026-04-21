@@ -98,7 +98,7 @@ vthink-agent-toolkit/
 ├── agents/                     # Agents — one folder per agent, always AGENT.md
 │   ├── test-runner/AGENT.md
 │   └── setup-wizard/AGENT.md
-├── workflows/                  # Multi-agent orchestration patterns
+├── playbooks/                  # Recipes for combining skills and agents
 ├── platforms/
 │   └── claude-code/            # Claude Code-specific assets
 │       ├── hooks/              # Pre/post-tool shell scripts

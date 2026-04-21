@@ -13,7 +13,7 @@ skills/<skill-name>/SKILL.md     # Skills — invoke by describing what you want
 agents/<agent-name>/AGENT.md     # Agents — specialised sub-agents with a defined role
 .claude/commands/                # Slash commands (Claude Code)
 platforms/claude-code/           # Claude Code-specific: hooks, settings-templates, mcp, rules
-workflows/                       # Multi-agent orchestration patterns
+playbooks/                       # Recipes for combining skills and agents
 output-styles/                   # Response style files controlling tone and formatting
 ```
 

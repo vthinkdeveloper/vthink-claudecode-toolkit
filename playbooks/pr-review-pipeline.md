@@ -1,13 +1,6 @@
 ---
 name: pr-review-pipeline
-description: >
-  End-to-end PR review pipeline. Runs conventions check, test suite, and
-  generates a QA guide in sequence for a given PR number. Invoke with
-  /pr-review-pipeline <PR-number>.
-version: 1.0.0
-author: adharsh2208vthink
-tags: [pr, review, qa, testing, conventions, pipeline]
-argument-hint: "<PR-number>"
+description: End-to-end PR review playbook. Runs conventions check, test suite, and generates a QA guide in sequence for a given PR number. Use when doing a full quality review before merge.
 ---
 
 # PR Review Pipeline

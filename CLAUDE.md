@@ -11,7 +11,7 @@ This file provides Claude Code with context about this repository. For agent-run
 ```
 skills/<name>/SKILL.md           # Skills — portable across all runtimes
 agents/<name>/AGENT.md           # Agents — portable across all runtimes
-workflows/                        # Multi-agent orchestration patterns
+playbooks/                        # Recipes for combining skills and agents
 platforms/claude-code/            # Claude Code-specific assets
   hooks/                          # Pre/post-tool shell scripts
   mcp/                            # MCP server config snippets
