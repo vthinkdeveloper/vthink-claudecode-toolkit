@@ -1,4 +1,4 @@
-# vthink-agent-toolkit
+# vThink Agent Toolkit
 
 > A curated toolkit of skills, agents, and workflows for building software with Agentic AI.
 
