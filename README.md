@@ -2,7 +2,11 @@
 
 > A curated toolkit of skills, agents, and workflows for building software with Agentic AI.
 
-Skills are how engineers teach agents to work the way they do.
+A collection of battle-tested workflows, agents, and skills ready to drop into any AI coding setup.
+
+Less setup.
+
+More building.
 
 ---
 
