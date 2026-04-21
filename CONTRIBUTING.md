@@ -8,7 +8,7 @@ Thanks for contributing! Skills and agents here should be useful across any AI c
 
 - **New Skill** — a workflow or domain knowledge prompt (`skills/<name>/SKILL.md`)
 - **New Agent** — a specialised sub-agent with a defined role (`agents/<name>/AGENT.md`)
-- **New Workflow** — a multi-agent orchestration pattern (`workflows/`)
+- **New Playbook** — a recipe for combining skills and agents (`playbooks/`)
 - **Claude Code-specific** — hooks, MCP configs, settings templates, rules (`platforms/claude-code/`)
 - **Bug Fix / Improvement** — fix a broken prompt, improve clarity, update stale instructions
 - **Documentation** — improve README, getting-started, or inline docs
@@ -60,7 +60,7 @@ Skills should be:
 |---|---|
 | Skill | `skills/<name>/SKILL.md` |
 | Agent | `agents/<name>/AGENT.md` |
-| Workflow | `workflows/` |
+| Playbook | `playbooks/` |
 | Slash Command (Claude Code) | `.claude/commands/` |
 | Hook (Claude Code) | `platforms/claude-code/hooks/pre-tool/` or `post-tool/` |
 | MCP Config (Claude Code) | `platforms/claude-code/mcp/` |
