@@ -1,6 +1,6 @@
 # Toolkit Catalog
 
-This file is the **single source of truth** for everything in the toolkit. When you add a new skill, agent, or workflow, **update this file as part of your PR**.
+This file is the **single source of truth** for everything in the toolkit. When you add a new skill, agent, or playbook, **update this file as part of your PR**.
 
 > Keep entries sorted alphabetically within each section.
 
@@ -35,14 +35,15 @@ Specialised sub-agents with defined roles. Each agent lives at `agents/<name>/AG
 
 ---
 
-## Workflows
+## Playbooks
 
-Multi-agent orchestration patterns. Place files in `workflows/`.
+Recipes for combining skills and agents. Place files in `playbooks/`.
 
 | Name | File | Description |
 |------|------|-------------|
-| feature-development | [`workflows/feature-development.md`](workflows/feature-development.md) | BDD → implement → test → ship. Full cycle from feature description to pushed code. |
-| pr-review-pipeline | [`workflows/pr-review-pipeline.md`](workflows/pr-review-pipeline.md) | Conventions check → test runner → QA guide. End-to-end PR review for a given PR number. |
+| feature-development | [`playbooks/feature-development.md`](playbooks/feature-development.md) | BDD → implement → test → ship. Full cycle from feature description to pushed code. |
+| plan-research-build | [`playbooks/plan-research-build.md`](playbooks/plan-research-build.md) | Plan first, research externally with anonymized prompts, build manually with line-by-line confidence. |
+| pr-review-pipeline | [`playbooks/pr-review-pipeline.md`](playbooks/pr-review-pipeline.md) | Conventions check → test runner → QA guide. End-to-end PR review for a given PR number. |
 
 ---
 

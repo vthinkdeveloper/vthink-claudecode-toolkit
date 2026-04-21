@@ -1,13 +1,6 @@
 ---
 name: feature-development
-description: >
-  End-to-end feature development workflow. Takes a feature description,
-  generates BDD scenarios for sign-off, implements the feature, runs
-  tests, and ships. Invoke with /feature-development "<feature description>".
-version: 1.0.0
-author: adharsh2208vthink
-tags: [feature, bdd, implementation, testing, ship, workflow]
-argument-hint: '"<feature description>"'
+description: End-to-end feature development playbook. Takes a feature description, generates BDD scenarios for sign-off, implements, runs tests, and ships. Use when starting a new feature from scratch.
 ---
 
 # Feature Development Workflow
