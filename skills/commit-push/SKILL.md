@@ -1,15 +1,6 @@
 ---
 name: commit-push
-description: >
-  Stage, commit, and push changes to the remote repository. Analyzes the current
-  diff, generates a commit message, confirms it with the user before committing,
-  then pushes. Use this skill whenever the user says "commit and push", "commit-push",
-  "ship it", "push my changes", or invokes /commit-push.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [git, commit, push, conventional-commits]
-allowed-tools: Bash(git *), Bash(gh *), AskUserQuestion
+description: Stage, commit, and push changes. Analyzes the diff, generates a Conventional Commits message, confirms with the user, then pushes. Use when the user says "commit and push", "push my changes", or invokes /commit-push.
 ---
 
 # Commit and Push

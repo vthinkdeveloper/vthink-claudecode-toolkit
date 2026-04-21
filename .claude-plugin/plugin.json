@@ -1,11 +1,13 @@
 {
-  "name": "vthink-toolkit",
-  "description": "vThink Claude Code toolkit — skills, agents, slash commands, and hooks",
+  "name": "vthink-agent-toolkit",
+  "description": "Agent-agnostic skills, agents, and workflows — works with Claude Code, Cursor, Windsurf, Gemini CLI, and more.",
   "version": "1.0.0",
   "author": {
     "name": "vThink"
   },
-  "repository": "https://github.com/vthinkdeveloper/vthink-claudecode-toolkit",
-  "commands": ["./.claude/commands/"],
-  "agents": ["./agents/"]
+  "homepage": "https://github.com/vthinkdeveloper/vthink-agent-toolkit",
+  "repository": "https://github.com/vthinkdeveloper/vthink-agent-toolkit",
+  "license": "MIT",
+  "commands": "./.claude/commands",
+  "agents": "./agents"
 }

@@ -1,16 +1,6 @@
 ---
 name: ship
-description: >
-  Ship your staged changes: runs a conventions check on staged files, generates
-  a commit message with ticket ID from branch name, commits, and pushes. Use this
-  instead of manual git commit + push. Invoke with `/ship` or when the user says
-  "ship it", "commit and push", or "send it".
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [git, commit, push, conventions, quality-gate]
-argument-hint: "[optional commit message override]"
-allowed-tools: Bash(git *), Bash(gh *), Read, Grep, Glob
+description: Ship staged changes — runs a conventions check, generates a commit message with ticket ID from branch name, commits, and pushes. Use when the user says "ship it", "commit and push", or "send it".
 ---
 
 # Ship — Conventions Check + Commit + Push

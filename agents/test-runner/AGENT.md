@@ -1,10 +1,6 @@
 ---
 name: test-runner
 description: Run the project's test suite, fix any failures, and ensure all tests pass. Auto-detects the test command from package.json or project config.
-version: 1.0.0
-author: adharsh2208vthink
-category: testing
-tags: [testing, npm, jest, vitest, pytest, ci]
 ---
 
 # Test Runner Agent

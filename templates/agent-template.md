@@ -1,15 +1,11 @@
 ---
 name: agent-name
-description: One-line description of what this agent does
-version: 1.0.0
-author: your-github-username
-category: core-development | code-review | testing | devops
-tags: [tag1, tag2]
+description: What this agent does and when to use it.
 ---
 
 ## Role
 
-[Describe the persona or role this agent takes on. E.g., "You are a senior backend engineer specializing in API design."]
+[The persona or role this agent takes on. E.g., "You are a senior backend engineer specializing in API design."]
 
 ## Responsibilities
 
@@ -19,26 +15,16 @@ tags: [tag1, tag2]
 
 ## Instructions
 
-[Detailed instructions for how the agent should behave. Be specific about:
+[Detailed instructions for how the agent should behave:
 - What inputs it expects
-- How it should process or analyze them
-- What format the output should take
+- How it processes or analyzes them
+- What format the output takes
 - Any decision logic or branching behavior]
-
-## Tools Available
-
-[List which Claude Code tools this agent is expected to use, e.g., Read, Grep, Bash, Write]
 
 ## Examples
 
 ### Example 1: [Short description]
 
-**Prompt:** `[Example user prompt]`
+**Prompt:** `[Example invocation]`
 
-**Expected behavior:** [What the agent should do in response]
-
-### Example 2: [Short description]
-
-**Prompt:** `[Example user prompt]`
-
-**Expected behavior:** [What the agent should do in response]
+**Expected behavior:** [What the agent does in response]

@@ -1,15 +1,6 @@
 ---
 name: commit-push-pr
-description: >
-  Stage, commit, push, and open a pull request in one workflow. Confirms the
-  commit message, PR title, and PR description with the user before acting.
-  Use this skill whenever the user says "commit push and PR", "commit and open a PR",
-  "push and raise a PR", or invokes /commit-push-pr.
-version: 1.0.0
-author: adharsh2208vthink
-category: workflow
-tags: [git, commit, push, pull-request, gh, conventional-commits]
-allowed-tools: Bash(git *), Bash(gh *), AskUserQuestion
+description: Stage, commit, push, and open a pull request in one workflow. Confirms commit message, PR title, and description before acting. Use when the user says "commit push and PR", "push and raise a PR", or invokes /commit-push-pr.
 ---
 
 # Commit, Push, and Open a PR
